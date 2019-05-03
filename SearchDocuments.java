@@ -45,8 +45,7 @@ public class SearchDocuments {
 
 	// Stage 1: Compute frequency of every word in a document
 	// Mapper 1: (tokenize file)
-	public static class TokenizerMapper extends
-			Mapper<Object, Text, Text, IntWritable> {
+	public static class TokenizerMapper extends Mapper<Object, Text, Text, IntWritable> {
 
 		Set<String> stopwords = new HashSet<String>();
 
@@ -93,8 +92,7 @@ public class SearchDocuments {
 	}
 
 	// Reducer 1: (calculate frequency of every word in every file)
-	public static class IntSumReducer extends
-			Reducer<Text, IntWritable, Text, IntWritable> {
+	public static class IntSumReducer extends Reducer<Text, IntWritable, Text, IntWritable> {
 
 		private IntWritable result = new IntWritable();
 
@@ -233,7 +231,7 @@ public class SearchDocuments {
 
 	// Stage 5: Do the sorting here
 	// Get local Top K=3
-	//output in decreasing order on key
+	// output in decreasing order on key
 	public static class Mapper5 extends Mapper<Text, Text, IntWritable, Text> {
 		private final static IntWritable one = new IntWritable(1);
 		public void map(Text key, Text value, Context context)
