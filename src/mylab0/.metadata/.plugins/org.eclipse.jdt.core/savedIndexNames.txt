@@ -1,1 +1,0 @@
-INDEX VERSION 1.126+/home/hadoop/workspace/cs5344/src/mylab0/.metadata/.plugins/org.eclipse.jdt.core
